@@ -1,0 +1,8 @@
+{
+	"LogLevel": "debug",
+	"LogPath": "log",
+	"TCPAddr": "0.0.0.0:3563",
+	"MaxConnNum": 20000,
+    "MySqlUrl":"root:123@tcp(localhost:3306)/blockchain?parseTime=true",
+	"ConsolePort":3333
+}

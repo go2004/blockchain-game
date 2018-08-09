@@ -1,0 +1,4 @@
+Location	Name	Icon	Electric	ManageCost	Output	Coord	Num
+1	水电矿点	Img_huoli	0.4	0.5	100.0	0.0	100
+2	火电矿点	Img_shuili	0.4	0.5	110.0	0.0	85
+3	风电矿点	Img_fengli	0.4	0.5	90.0	0.0	85
