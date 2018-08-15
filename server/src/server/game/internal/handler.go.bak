@@ -109,6 +109,7 @@ func handleU2S_Buy(args []interface{}) {
 		return
 	}
 	player.appCoins = player.appCoins - total
+	playerID2Player[playerID] = player
 	//购买操作
 	for i := 0; i < count; i++ {
 		//写节点
@@ -218,6 +219,7 @@ func handleU2S_Mining(args []interface{}) {
 	}
 
 	player.appCoins = player.appCoins - value
+	playerID2Player[playerID] = player
 	player.onSaveDB()
 	player.send()
 
@@ -273,6 +275,7 @@ func onGatherMine(a gate.Agent, id int, playerID uint) int32 {
 	//更新消息
 	player := playerID2Player[playerID]
 	player.btc = player.btc + value
+	playerID2Player[playerID] = player
 	player.onSaveDB()
 	player.send()
 
@@ -388,6 +391,7 @@ func handleU2S_ModifyPlayer(args []interface{}) {
 		player.name = m.Name
 	}
 	player.style = m.Style
+	playerID2Player[playerID] = player
 	player.onSaveDB()
 	a.WriteMsg(&msg.S2U_ModifyPlayer{ErrorCode: 0})
 	player.send()

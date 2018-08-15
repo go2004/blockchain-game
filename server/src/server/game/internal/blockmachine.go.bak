@@ -176,7 +176,7 @@ func OnTickMinute() {
 			select {
 			case <-ticker.C:
 				//fmt.Printf("ticked at %v\n", time.Now())
-				//UpdatePeerDayBtc()
+				UpdatePeerDayBtc()
 			}
 		}
 
@@ -190,7 +190,8 @@ func OnTickHour() {
 		for {
 			select {
 			case <-ticker.C:
-				mysql.PingDB()
+				db := mysql.MysqlDB()
+				db.Ping()
 
 				UpdatePeerDayBtc()
 			}

@@ -55,6 +55,7 @@ func (player *Player) login(playerID uint) {
 
 		// db error
 		player.state = userGame
+		playerID2Player[playerID] = player
 
 		player.onLogin()
 		player.autoSaveDB()

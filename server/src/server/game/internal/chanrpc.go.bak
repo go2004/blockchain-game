@@ -65,8 +65,7 @@ func rpcUserLogin(args []interface{}) {
 	log.Debug("acc %v login", playerID)
 	//fmt.Println("rpcUserLogin: ", playerID)
 	// login
-	//newPlayer := new(Player)
-	newPlayer := &Player{}
+	newPlayer := new(Player)
 	newPlayer.Agent = agent
 	newPlayer.LinearContext = skeleton.NewLinearContext()
 	newPlayer.state = userLogin

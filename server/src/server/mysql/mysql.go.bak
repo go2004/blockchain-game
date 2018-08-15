@@ -31,7 +31,7 @@ func CheckErr(err error) {
 	}
 }
 
-func PingDB() {
+func PingDB(err error) {
 	db :=MysqlDB()
 	db.Ping()
 }
